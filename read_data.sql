@@ -34,7 +34,7 @@ CREATE TABLE temp_address(
   city VARCHAR(100),
   zip VARCHAR(100)
   );
-\COPY temp_addr(email, street, city, zip) FROM 'final-data/address.dat' WITH DELIMITER '|'
+\COPY temp_address(email, street, city, zip) FROM 'final-data/address.dat' WITH DELIMITER '|'
 
 DROP TABLE IF EXISTS temp_zip CASCADE;
 CREATE TABLE temp_zip(
