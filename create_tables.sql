@@ -49,7 +49,7 @@ CREATE TABLE customer_design(
   design_font_color VARCHAR(10),
 
   PRIMARY KEY(design_id),
-  UNIQUE(customer_id,design_id,art_filename)
+  UNIQUE(customer_id,design_id,art_filename),
   FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
