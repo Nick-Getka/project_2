@@ -35,8 +35,7 @@ CREATE TABLE temp_address(
 
 DROP TABLE IF EXISTS temp_zip CASCADE;
 CREATE TABLE temp_zip(
-  email VARCHAR(100),
-  street VARCHAR(100),
-  city VARCHAR(100),
-  zip VARCHAR(100)
+  zip VARCHAR(100),
+  state VARCHAR(100),
+  country VARCHAR(100)
   );
