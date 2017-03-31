@@ -12,7 +12,12 @@ DROP TABLE product_options;
 DROP TABLE customer_product_details;
 DROP TABLE purchase_order;
 
-CREATE TABLE customer();
+CREATE TABLE customer(
+  customer_id SERIAL PRIMARY KEY NOT NULL,
+
+
+  PRIMARY KEY(customer_id)
+  );
 CREATE TABLE customer_preferences();
 CREATE TABLE customer_design();
 CREATE TABLE customer_artwork();
