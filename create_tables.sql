@@ -1,17 +1,17 @@
 /*
 This Script creates the 10 Required Tables
 */
-DROP TABLE IF EXISTS customer_preferences;
-DROP TABLE IF EXISTS product_category;
-DROP TABLE IF EXISTS product_options;
-DROP TABLE IF EXISTS product;
-DROP TABLE IF EXISTS customer_artwork;
-DROP TABLE IF EXISTS customer_design;
-DROP TABLE IF EXISTS design_template;
-DROP TABLE IF EXISTS customer_product_details;
-DROP TABLE IF EXISTS purchase_order;
-DROP TABLE IF EXISTS customer;
 
+
+
+
+
+
+
+
+
+
+DROP TABLE IF EXISTS customer CASCADE;
 CREATE TABLE customer(
   customer_id SERIAL NOT NULL,
   customer_email VARCHAR(45) NOT NULL,
@@ -36,6 +36,8 @@ CREATE TABLE customer_preferences(
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+
+DROP TABLE IF EXISTS design_template CASCADE;
 CREATE TABLE design_template(
   template_id SERIAL NOT NULL,
   template_name VARCHAR(45),
@@ -44,6 +46,8 @@ CREATE TABLE design_template(
 
   PRIMARY KEY(template_id)
   );
+
+DROP TABLE IF EXISTS customer_design CASCADE;
 CREATE TABLE customer_design(
   design_id SERIAL NOT NULL,
   customer_id INT,
@@ -65,6 +69,8 @@ CREATE TABLE customer_design(
     ON DELETE SET NULL
     ON UPDATE CASCADE
   );
+
+DROP TABLE IF EXISTS customer_artwork CASCADE;
 CREATE TABLE customer_artwork(
   artwork_id SERIAL NOT NULL,
   customer_id INT,
@@ -80,6 +86,8 @@ CREATE TABLE customer_artwork(
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+
+DROP TABLE IF EXISTS product CASCADE;
 CREATE TABLE product(
   product_sku SERIAL NOT NULL,
   product_name VARCHAR(50),
@@ -88,6 +96,8 @@ CREATE TABLE product(
 
   PRIMARY KEY(product_sku)
   );
+
+DROP TABLE IF EXISTS product_category CASCADE;
 CREATE TABLE product_category(
   product_sku INT NOT NULL,
   product_category VARCHAR(45),
@@ -97,6 +107,8 @@ CREATE TABLE product_category(
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+
+DROP TABLE IF EXISTS product_options CASCADE;
 CREATE TABLE product_options(
   product_sku INT NOT NULL,
   product_option_type VARCHAR(45),
@@ -107,6 +119,8 @@ CREATE TABLE product_options(
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+
+DROP TABLE IF EXISTS purchase_order CASCADE;
 CREATE TABLE purchase_order(
   order_id SERIAL NOT NULL,
   order_date DATE,
@@ -124,6 +138,8 @@ CREATE TABLE purchase_order(
 
   PRIMARY KEY(order_id)
   );
+
+DROP TABLE IF EXISTS customer_product_details CASCADE;
 CREATE TABLE customer_product_details(
   customer_id INT,
   product_sku INT,
