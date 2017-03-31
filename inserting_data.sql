@@ -34,7 +34,7 @@ DROP TABLE IF EXISTS full_address CASCADE;
 INSERT INTO product_category(product_sku, product_category)
 SELECT DISTINCT product_sku, product_category
 FROM product as p1, temp_product as p2
-WHERE p1.product_name = p2.product_name AND p1.product_price = p2.product_price;
+WHERE p1.product_name = p2.product_name;
 
 
 
