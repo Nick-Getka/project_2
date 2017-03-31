@@ -1,0 +1,13 @@
+table name|table description
+table_def|A number and description of each table in the database.
+valid_attribute_value|Holds valid values and corresponding codes for all table attributes.
+dolphin|This table contains the main information about dolphins currently in the system.
+inactive_dolphin|Information about a dolphin that has been renamed. This table maps the old name and the new name.
+location|GPS deteails about the location of different observations in Shark Bay.
+dolphin_calculated|Dolphin data that should eventually be calculated from the database.  Once it is calculated, this table is likely to be merged with the dolphin table.
+dolphin_group|Dolphin group data.  These are groups identified by researchers.
+inactive_dolphin_group|This table has dolphin group names that are no longer in use.
+dolphin_group_member|This table maps a dolphin to a group.  Dolphins can be in multiple groups.
+load_demo|This is a loading table for demo data.
+load_matrilines|This is a loading table for matrilines data.
+load_survey|This is a loading table for survey data.
