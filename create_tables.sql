@@ -2,8 +2,8 @@
 This Script creates the 10 Required Tables
 */
 DROP TABLE IF EXISTS customer_preferences;
-DROP TABLE IF EXISTS customer_design;
 DROP TABLE IF EXISTS customer_artwork;
+DROP TABLE IF EXISTS customer_design;
 DROP TABLE IF EXISTS design_template;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS product_category;
