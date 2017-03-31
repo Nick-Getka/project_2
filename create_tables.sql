@@ -1,7 +1,6 @@
 /*
 This Script creates the 10 Required Tables
 */
-DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS customer_preferences;
 DROP TABLE IF EXISTS customer_design;
 DROP TABLE IF EXISTS customer_artwork;
@@ -11,6 +10,7 @@ DROP TABLE IF EXISTS product_category;
 DROP TABLE IF EXISTS product_options;
 DROP TABLE IF EXISTS customer_product_details;
 DROP TABLE IF EXISTS purchase_order;
+DROP TABLE IF EXISTS customer;
 
 CREATE TABLE customer(
   customer_id SERIAL NOT NULL,
