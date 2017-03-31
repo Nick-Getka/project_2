@@ -27,7 +27,7 @@ CREATE TABLE customer(
   UNIQUE(customer_email)
   );
 
-DROP TABLE IF EXISTS customer_preferences CASCADE;  
+DROP TABLE IF EXISTS customer_preferences CASCADE;
 CREATE TABLE customer_preferences(
   customer_id INT NOT NULL,
   preference_type VARCHAR(10) NOT NULL,
@@ -139,6 +139,9 @@ CREATE TABLE purchase_order(
   approval_code VARCHAR(20),
 
   PRIMARY KEY(order_id)
+  FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
   );
 
 DROP TABLE IF EXISTS customer_product_details CASCADE;
