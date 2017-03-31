@@ -17,13 +17,13 @@ CREATE TABLE customer(
   customer_email VARCHAR(45) NOT NULL,
   customer_password VARCHAR(20),
   first_name VARCHAR(20),
-  last_name VARCHAR(20)
+  last_name VARCHAR(20),
 
   UNIQUE(customer_id),
   PRIMARY KEY(customer_id)
   );
 CREATE TABLE customer_preferences(
-  
+
   );
 CREATE TABLE customer_design();
 CREATE TABLE customer_artwork();
