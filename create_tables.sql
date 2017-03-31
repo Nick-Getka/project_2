@@ -100,7 +100,7 @@ CREATE TABLE product_category(
 CREATE TABLE product_options(
   product_sku INT NOT NULL,
   product_option_type VARCHAR(45),
-  option_value VARCAR(45),
+  option_value VARCHAR(45),
 
   PRIMARY KEY(product_sku,product_option_type,option_value),
   FOREIGN KEY(product_sku) REFERENCES product(product_sku)
@@ -117,13 +117,13 @@ CREATE TABLE customer_product_details(
   product_quantity INT,
 
   PRIMARY KEY(customer_id,product_sku,order_id,design_id),
-  FOREIGN KEY(customer_id) REFERENCE customer(customer_id)
+  FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
     ON UPDATE CASCADE,
-  FOREIGN KEY(product_sku) REFERENCE product(product_sku)
+  FOREIGN KEY(product_sku) REFERENCES product(product_sku)
     ON UPDATE CASCADE,
-  FOREIGN KEY(order_id) REFERENCE purchase_order(order_id)
+  FOREIGN KEY(order_id) REFERENCES purchase_order(order_id)
     ON UPDATE CASCADE,
-  FOREIGN KEY(design_id) REFERENCE customer_design(design_id)
+  FOREIGN KEY(design_id) REFERENCES customer_design(design_id)
     ON UPDATE CASCADE
   );
 CREATE TABLE purchase_order(
