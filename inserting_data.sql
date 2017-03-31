@@ -18,14 +18,14 @@ CREATE TABLE full_address AS (
   FROM temp_address
   LEFT JOIN temp_zip
   ON temp_address.zip = temp_zip.zip
-  );
+);
 DROP TABLE IF EXISTS final_cust CASCADE;
 CREATE TABLE final_cust AS (
   SELECT DISTINCT email_1, user_password, first_name, last_name, street, city, state, zip
   FROM temp_user
   FULL JOIN full_address
   ON full_address.email = temp_user.email_1
-  WHERE full_address.email iS NOT NULL AND temp_user.email_1 IS NOT NULL;
+  WHERE full_address.email iS NOT NULL AND temp_user.email_1 IS NOT NULL
 );
 /*Inserts the customer data in to the final table*/
 INSERT INTO customer(customer_email, customer_password, first_name, last_name, street_address, city, state, zip_code)
