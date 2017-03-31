@@ -82,7 +82,7 @@ CREATE TABLE customer_artwork(
 DROP TABLE IF EXISTS product CASCADE;
 CREATE TABLE product(
   product_sku SERIAL NOT NULL,
-  product_name VARCHAR(70),
+  product_name VARCHAR(80),
   product_price DECIMAL(8,2),
   product_image VARCHAR(100),
 
