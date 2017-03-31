@@ -78,7 +78,7 @@ CREATE TABLE customer_artwork(
     ON UPDATE CASCADE,
   FOREIGN KEY(design_id) REFERENCES customer_design(design_id)
     ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ON UPDATE CASCADE
   );
 CREATE TABLE product(
   product_sku SERIAL NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE product_category(
   PRIMARY KEY(product_sku,product_category),
   FOREIGN KEY(product_sku) REFERENCES product(product_sku)
     ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ON UPDATE CASCADE
   );
 CREATE TABLE product_options(
   product_sku INT NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE product_options(
   PRIMARY KEY(product_sku,product_option_type,option_value),
   FOREIGN KEY(product_sku) REFERENCES product(product_sku)
     ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ON UPDATE CASCADE
   );
 CREATE TABLE customer_product_details(
   customer_id INT,
@@ -124,7 +124,7 @@ CREATE TABLE customer_product_details(
   FOREIGN KEY(order_id) REFERENCE purchase_order(order_id)
     ON UPDATE CASCADE,
   FOREIGN KEY(design_id) REFERENCE customer_design(design_id)
-    ON UPDATE CASCADE,
+    ON UPDATE CASCADE
   );
 CREATE TABLE purchase_order(
   order_id SERIAL NOT NULL,
