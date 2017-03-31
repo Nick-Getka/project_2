@@ -26,6 +26,8 @@ CREATE TABLE customer(
   PRIMARY KEY(customer_id),
   UNIQUE(customer_email)
   );
+
+DROP TABLE IF EXISTS customer_preferences CASCADE;  
 CREATE TABLE customer_preferences(
   customer_id INT NOT NULL,
   preference_type VARCHAR(10) NOT NULL,
