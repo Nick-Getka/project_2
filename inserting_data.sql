@@ -39,7 +39,7 @@ WHERE p1.product_name = p2.product_name AND p1.product_price = p2.product_price;
 
 
 /*Inserting Product Option*/
-DROP TABLE  IF EXISTSconcat_option CASCADE;
+DROP TABLE  IF EXISTS concat_option CASCADE;
 CREATE TABLE concat_option AS(
   SELECT DISTINCT CASE
     WHEN product_option_1 IS NULL THEN product_option_2
@@ -70,3 +70,6 @@ SELECT DISTINCT product_sku, result_option, result_value
 FROM product
 INNER JOIN option_final AS final
 ON product.product_name = final.product_name AND product.product_price = CAST(final.price AS DECIMAL(8,2));
+DROP TABLE  IF EXISTS concat_option CASCADE;
+DROP TABLE IF EXISTS concat_value CASCADE;
+DROP TABLE IF EXISTS option_final CASCADE;
