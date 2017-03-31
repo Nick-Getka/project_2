@@ -4,8 +4,8 @@ This Script creates the 10 Required Tables
 DROP TABLE IF EXISTS customer CASCADE;
 CREATE TABLE customer(
   customer_id SERIAL NOT NULL,
-  customer_email VARCHAR(45) NOT NULL,
-  customer_password VARCHAR(20) NOT NULL,
+  customer_email VARCHAR(45),
+  customer_password VARCHAR(20),
   first_name VARCHAR(20),
   last_name VARCHAR(20),
   street_address VARCHAR(100),
