@@ -36,6 +36,14 @@ CREATE TABLE customer_preferences(
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+CREATE TABLE design_template(
+  template_id SERIAL NOT NULL,
+  template_name VARCHAR(45),
+  template_description VARCHAR(100),
+  template_filename VARCHAR(45)
+
+  PRIMARY KEY(template_id)
+  );
 CREATE TABLE customer_design(
   design_id SERIAL NOT NULL,
   customer_id INT,
@@ -71,14 +79,6 @@ CREATE TABLE customer_artwork(
   FOREIGN KEY(design_id) REFERENCES customer_design(design_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  );
-CREATE TABLE design_template(
-  template_id SERIAL NOT NULL,
-  template_name VARCHAR(45),
-  template_description VARCHAR(100),
-  template_filename VARCHAR(45)
-
-  PRIMARY KEY(template_id)
   );
 CREATE TABLE product(
   product_sku SERIAL NOT NULL,
