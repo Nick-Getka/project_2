@@ -128,7 +128,7 @@ CREATE TABLE purchase_order(
   credic_card_security INT,
   approval_code VARCHAR(20),
 
-  PRIMARY KEY(order_id)
+  PRIMARY KEY(order_id),
   FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
     ON DELETE SET NULL
     ON UPDATE CASCADE
