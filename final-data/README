@@ -1,0 +1,58 @@
+This file describes the data in the different data files.  
+You must create all the tables from the relational model posted
+on Blackboard. You should only populate the tables that 
+have data in this directory.  This means will have a lot of 
+tables that do not contain data.
+
+When you create tables, make sure you specify appropriate constraints,
+even if you are not populating the table. For example, primary keys
+should be properly specified for all the tables.
+
+For foreign keys, you can use any form of cascading you want.
+Do not delete columns that I have not provided data for.  Just
+set them to allow for NULLs. If one of the tables you have 
+data for needs a primary key and I did not provide it, 
+you can generate one in postgres using the serial data type
+or creating your own sequence.
+
+There is bad data in some of the files.  This was done by
+design.  So this is something that you need to deal with.  
+You should load all the data into temp tables (possibly 
+using different data types for some fields) and then 
+you should add only the good data to the final tables. 
+You will do that using sql.  If you choose to clean the 
+files in linux, you will get only limited credit doing this.
+I know you can do it easily in linux.  I want you to practice 
+doing this in postgres. In other words, all data cleaning should
+happen in SQL.
+
+What do you need to clean:
+- Standardize capitalization if it makes sense (I do not care if you
+choose all caps, initial caps, lower case, just name sure a particular 
+attribute has the same capitalization when it makes sense.
+- If fields should be numeric, only numeric values should be in the results.
+Remove similar bad data.
+- You do not need to clean typos if they are not bad data. In other words, 
+a first name, Lisaa is a typo that does not need to be fixed. However, 
+an 'a' for number does not make sense.
+
+Data files:
+products.dat
+product category; product name; product description; price; product option; option value;nothing useful; product option; option value 
+
+user.dat
+email|password|email|first_name|last_name|middle_initial
+
+zip.dat
+zip_code|state|country
+
+address.dat
+email|street|city|zip
+
+** The first file needs to be split across a number of tables.
+** The last three files need to be combined to get the customer relation setup correctly. All the users are not US users.
+
+Some extra credit options:
+- Emails should have a '@' and a valid domain name
+- Scripts for typos
+- Add additional data
