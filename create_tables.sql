@@ -55,7 +55,7 @@ CREATE TABLE customer_design(
     ON UPDATE CASCADE,
   FOREIGN KEY(template_id) REFERENCES design_template(template_id)
     ON DELETE SET NULL
-    ON UPDATE CASCADE,
+    ON UPDATE CASCADE
   );
 CREATE TABLE customer_artwork(
   artwork_id SERIAL NOT NULL,
