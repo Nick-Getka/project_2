@@ -20,7 +20,7 @@ CREATE TABLE temp_product(
 
 DROP TABLE IF EXISTS temp_user CASCADE;
 CREATE TABLE temp_user(
-  email VARCHAR(100),
+  email_1 VARCHAR(100),
   user_password VARCHAR(100),
   email_2 VARCHAR(100),
   first_name VARCHAR(100),
