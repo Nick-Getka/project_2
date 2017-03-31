@@ -107,6 +107,23 @@ CREATE TABLE product_options(
     ON DELETE CASCADE
     ON UPDATE CASCADE
   );
+CREATE TABLE purchase_order(
+  order_id SERIAL NOT NULL,
+  order_date DATE,
+  total_price DECIMAL(8,2),
+  customer_id INT,
+  street_address_1 VARCHAR(100),
+  street_address_2 VARCHAR(100),
+  city VARCHAR(50),
+  state VARCHAR(30),
+  zip_code VARCHAR(10),
+  credit_card_number VARCHAR(16),
+  credit_card_expiration DATE,
+  credic_card_security INT,
+  approval_code VARCHAR(20),
+
+  PRIMARY KEY(order_id)
+  );
 CREATE TABLE customer_product_details(
   customer_id INT,
   product_sku INT,
@@ -125,21 +142,4 @@ CREATE TABLE customer_product_details(
     ON UPDATE CASCADE,
   FOREIGN KEY(design_id) REFERENCES customer_design(design_id)
     ON UPDATE CASCADE
-  );
-CREATE TABLE purchase_order(
-  order_id SERIAL NOT NULL,
-  order_date DATE,
-  total_price DECIMAL(8,2),
-  customer_id INT,
-  street_address_1 VARCHAR(100),
-  street_address_2 VARCHAR(100),
-  city VARCHAR(50),
-  state VARCHAR(30),
-  zip_code VARCHAR(10),
-  credit_card_number VARCHAR(16),
-  credit_card_expiration DATE,
-  credic_card_security INT,
-  approval_code VARCHAR(20),
-
-  PRIMARY KEY(order_id)
   );
