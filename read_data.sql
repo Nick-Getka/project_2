@@ -13,4 +13,4 @@ CREATE TABLE temp_product(
   product_option VARCHAR(100)
   );
 
-\COPY product(product_category, product_name, product_description, price, option_value, nothing_useful, product_option) FROM 'final-data/products.dat' WITH CSV HEADER DELIMITER '|'
+\COPY temp_product(product_category, product_name, product_description, price, option_value, nothing_useful, product_option) FROM 'final-data/products.dat' WITH CSV HEADER DELIMITER '|'
