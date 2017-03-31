@@ -13,9 +13,9 @@ DROP TABLE IF EXISTS customer_product_details;
 DROP TABLE IF EXISTS purchase_order;
 
 CREATE TABLE customer(
-  customer_id SERIAL PRIMARY KEY NOT NULL,
+  customer_id SERIAL NOT NULL,
 
-
+  UNIQUE(customer_id),
   PRIMARY KEY(customer_id)
   );
 CREATE TABLE customer_preferences();
