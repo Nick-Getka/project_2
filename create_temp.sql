@@ -4,9 +4,6 @@
 * Then it calls the read_data script which reads in the raw datafiles
 * finally it performs some minor data cleaning
 */
-
-
-
 /*Creating Tables*/
 DROP TABLE IF EXISTS temp_product CASCADE;
 CREATE TABLE temp_product(
@@ -50,8 +47,3 @@ CREATE TABLE temp_zip(
 
 /*Loading Data*/
 \i read_data.sql
-
-
-
-/*Cleaning Data*/
-ALTER TABLE temp_user DROP COLUMN email_2;
