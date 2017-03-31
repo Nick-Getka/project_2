@@ -21,7 +21,7 @@ CREATE TABLE customer(
   street_address VARCHAR(100),
   city VARCHAR(50),
   state VARCHAR(30),
-  zip_code VARCHAR(10)
+  zip_code VARCHAR(10),
 
   PRIMARY KEY(customer_id),
   UNIQUE(customer_email)
