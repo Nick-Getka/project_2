@@ -54,4 +54,4 @@ CREATE TABLE temp_zip(
 
 
 /*Cleaning Data*/
-ALTER temp_user DROP email_2;
+ALTER temp_user DROP COLUMN email_2;
