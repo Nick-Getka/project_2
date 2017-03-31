@@ -1,16 +1,6 @@
 /*
 This Script creates the 10 Required Tables
 */
-
-
-
-
-
-
-
-
-
-
 DROP TABLE IF EXISTS customer CASCADE;
 CREATE TABLE customer(
   customer_id SERIAL NOT NULL,
