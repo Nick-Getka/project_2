@@ -1,7 +1,13 @@
 /*
 * This script creates the temporary tables which store the raw data
 * These temp tables correspond directly to the datafiles categories
+* Then it calls the read_data script which reads in the raw datafiles
+* finally it performs some minor data cleaning
 */
+
+
+
+/*Creating Tables*/
 DROP TABLE IF EXISTS temp_product CASCADE;
 CREATE TABLE temp_product(
   product_category VARCHAR(100),
@@ -40,4 +46,12 @@ CREATE TABLE temp_zip(
   country VARCHAR(100)
   );
 
-  \i read_data.sql
+
+
+/*Loading Data*/
+\i read_data.sql
+
+
+
+/*Cleaning Data*/
+ALTER TABLE DROP COLUMN email_2 FROM temp_user;
