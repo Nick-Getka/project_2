@@ -2,7 +2,7 @@
 * This script creates the temporary tables which store the raw data
 * These temp tables correspond directly to the datafiles categories
 */
-DROP TABLE IF EXISTS temp_product CASCADE,
+DROP TABLE IF EXISTS temp_product CASCADE;
 CREATE TABLE temp_product(
   product_category VARCHAR(100),
   product_name VARCHAR(100),
