@@ -40,7 +40,7 @@ CREATE TABLE design_template(
   template_id SERIAL NOT NULL,
   template_name VARCHAR(45),
   template_description VARCHAR(100),
-  template_filename VARCHAR(45)
+  template_filename VARCHAR(45),
 
   PRIMARY KEY(template_id)
   );
