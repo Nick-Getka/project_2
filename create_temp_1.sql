@@ -39,3 +39,5 @@ CREATE TABLE temp_zip(
   state VARCHAR(100),
   country VARCHAR(100)
   );
+
+  \i read_data.sql
